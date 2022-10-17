@@ -1,34 +1,21 @@
-pipeline {
-  options {
-    disableConcurrentBuilds()
-  }
-  agent {
-    label ""
-  }
-  environment {
-    DEPLOY_NAMESPACE = "jx-production"
-  }
-  stages {
-    stage('Validate Environment') {
-      steps {
-        container('maven') {
-          dir('env') {
-            sh 'jx step helm build'
-          }
-        }
-      }
+pipeline{
+    agent any
+
+    tools {
+         maven 'maven'
+         jdk 'java'
     }
-    stage('Update Environment') {
-      when {
-        branch 'master'
-      }
-      steps {
-        container('maven') {
-          dir('env') {
-            sh 'jx step helm apply'
-          }
+
+    stages{
+        stage('checkout'){
+            steps{
+                checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/sreenivas449/java-hello-world-with-maven.git']]])
+            }
         }
-      }
+        stage('build'){
+            steps{
+               bat 'mvn package'
+            }
+        }
     }
-  }
 }
