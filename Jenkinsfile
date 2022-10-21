@@ -1,10 +1,11 @@
+@Library('shared-library') _
 pipeline{
     agent any
 
-    tools {
+    /*tools {
          maven 'maven'
          jdk 'java'
-    }
+    }*/
 
     stages{
         stage('checkout'){
@@ -14,7 +15,7 @@ pipeline{
         }
         stage('build'){
             steps{
-               bat 'mvn package'
+               bat 'mvn clean install'
             }
         }
     }
