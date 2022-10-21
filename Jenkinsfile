@@ -16,7 +16,7 @@ pipeline{
                 
                   script{
     def browsers = ['chrome', 'firefox']
-    def config = [:]
+    def map = [:]
     }
                 
                 //checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/sreenivas449/java-hello-world-with-maven.git']]])
