@@ -2,7 +2,7 @@
 pipeline{
     
     agent any
-    def config = [:]
+    def map = [:]
 
     /*tools {
          maven 'maven'
