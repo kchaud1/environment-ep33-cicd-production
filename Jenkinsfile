@@ -2,9 +2,10 @@
 pipeline{
     
     agent any
+    script{
     def browsers = ['chrome', 'firefox']
-    def map = [:]
-
+    def config = [:]
+    }
     /*tools {
          maven 'maven'
          jdk 'java'
