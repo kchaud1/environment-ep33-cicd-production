@@ -23,7 +23,7 @@ pipeline{
             cleanWs()
             runGitCheckOut(false)
             
-            //config = pipelineSetup()
+            config = pipelineSetup()
             }
         }
        
