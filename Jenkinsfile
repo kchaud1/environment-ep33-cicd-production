@@ -2,6 +2,7 @@
 pipeline{
     
     agent any
+    def browsers = ['chrome', 'firefox']
     def map = [:]
 
     /*tools {
