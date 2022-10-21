@@ -24,7 +24,7 @@ pipeline{
             runGitCheckOut(false)
                 echo "Git URL is ${GIT_URL}" 
             script{
-                def url = scm.getUserRemoteConfigs()[0].getUrl()
+                def url = scm.getUserRemoteConfigs()[0].getUrl()-"https://"
                 echo "Git URL is ${url}"
                 def config = [:]
                 config = pipelineSetup()}
