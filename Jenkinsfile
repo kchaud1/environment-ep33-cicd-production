@@ -2,10 +2,7 @@
 pipeline{
     
     agent any
-    script{
-    def browsers = ['chrome', 'firefox']
-    def config = [:]
-    }
+    
     /*tools {
          maven 'maven'
          jdk 'java'
@@ -14,6 +11,10 @@ pipeline{
     stages{
         
         stage('checkout'){
+            script{
+    def browsers = ['chrome', 'firefox']
+    def config = [:]
+    }
             steps{
                 
                 //checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/sreenivas449/java-hello-world-with-maven.git']]])
