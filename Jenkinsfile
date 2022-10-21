@@ -1,6 +1,6 @@
 @Library('shared-library@main') _
 pipeline{
-    def config =[:]
+    config =[:]
     agent any
     
 
