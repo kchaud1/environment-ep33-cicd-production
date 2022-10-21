@@ -23,6 +23,7 @@ pipeline{
             cleanWs()
             runGitCheckOut(false)
             script{
+                def config = [:]
                 config = pipelineSetup()}
             }
         }
