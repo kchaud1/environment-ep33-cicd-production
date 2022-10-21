@@ -22,6 +22,7 @@ pipeline{
                 //checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/sreenivas449/java-hello-world-with-maven.git']]])
             cleanWs()
             runGitCheckOut(false)
+                echo "Git URL is ${GIT_URL}" 
             script{
                 def config = [:]
                 config = pipelineSetup()}
