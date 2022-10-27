@@ -37,8 +37,8 @@ pipeline{
        
         stage('build and upload'){
             steps{
-                
-                    //config = pipelineSetup()
+                def config = [:]
+                    config = pipelineSetup()
                sh 'mvn clean install'
                 script{
                 def aid = utilMaven.getArtifactID()
