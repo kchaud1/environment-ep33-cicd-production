@@ -42,6 +42,7 @@ pipeline{
                  
                 def config = [:]
                     config = pipelineSetup()
+                    def service_name = ['karan']
                 def aid = utilMaven.getArtifactID()
                 def path = utilMaven.getArtifactoryPath()
                 echo "${aid}"
@@ -52,7 +53,7 @@ pipeline{
                 echo "${version}"
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}${path}/${aid}/${version}"
-                    runDockerBuild.build(config, serviceNames=['karan'])
+                    runDockerBuild.build(config, service_name)
                 
                 }
             }
