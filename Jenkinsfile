@@ -37,10 +37,11 @@ pipeline{
        
         stage('build and upload'){
             steps{
-                def config = [:]
-                    config = pipelineSetup()
                sh 'mvn clean install'
                 script{
+                 
+                def config = [:]
+                    config = pipelineSetup()
                 def aid = utilMaven.getArtifactID()
                 def path = utilMaven.getArtifactoryPath()
                 echo "${aid}"
