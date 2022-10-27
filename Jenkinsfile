@@ -28,7 +28,7 @@ pipeline{
                 echo "Git URL is ${url}"
                 def config = [:]
                 config = pipelineSetup()}
-                echo "${config}"
+                //echo "${config}"
             }
         }
        
@@ -44,7 +44,7 @@ pipeline{
                 echo "${gid}"
                 def version = utilMaven.getVersion()
                 echo "${version}"
-                def deployUrl = config['rtDeploy']
+                def deployUrl = "$config['rtDeploy']"
                     echo "${deployUrl}"
                 
                 }
