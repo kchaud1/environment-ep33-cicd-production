@@ -43,6 +43,8 @@ pipeline{
                 echo "${gid}"
                 def version = utilMaven.getVersion()
                 echo "${version}"
+                def deployUrl = config['rtDeploy']
+                    echo "${deployUrl}"
                 
                 }
             }
