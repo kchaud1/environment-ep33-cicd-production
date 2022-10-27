@@ -52,7 +52,7 @@ pipeline{
                 echo "${version}"
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}${path}/${aid}/${version}"
-                    runDockerBuild.build(config, serviceNames=[])
+                    runDockerBuild.build(config, serviceNames=['karan'])
                 
                 }
             }
