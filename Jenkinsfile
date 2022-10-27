@@ -37,6 +37,8 @@ pipeline{
        
         stage('build and upload'){
             steps{
+                
+                    config = pipelineSetup()
                sh 'mvn clean install'
                 script{
                 def aid = utilMaven.getArtifactID()
@@ -47,9 +49,8 @@ pipeline{
                 echo "${gid}"
                 def version = utilMaven.getVersion()
                 echo "${version}"
-                    config = pipelineSetup()
                 def deployUrl = config['rtDeploy']
-                    echo "${deployUrl}/${path}/${aid}/${version}"
+                    echo "${deployUrl}${path}/${aid}/${version}"
                 
                 }
             }
