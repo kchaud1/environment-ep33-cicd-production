@@ -34,7 +34,7 @@ pipeline{
         stage('build'){
             steps{
                sh 'mvn clean install'
-                aid = utilMaven.getArtifactID()
+                def aid = utilMaven.getArtifactID()
                 echo "${aid}"
             }
         }
