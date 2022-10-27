@@ -35,7 +35,7 @@ pipeline{
             }
         }
        
-        stage('build'){
+        stage('build and upload'){
             steps{
                sh 'mvn clean install'
                 script{
@@ -47,6 +47,7 @@ pipeline{
                 echo "${gid}"
                 def version = utilMaven.getVersion()
                 echo "${version}"
+                    config = pipelineSetup()
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}"
                 
