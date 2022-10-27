@@ -36,7 +36,14 @@ pipeline{
                sh 'mvn clean install'
                 script{
                 def aid = utilMaven.getArtifactID()
+                def path = utilMaven.getArtifactoryPath()
                 echo "${aid}"
+                echo "${path}"
+                def gid = utilMaven.getGroupID()
+                echo "${gid}"
+                def version = utilMaven.getVersion()
+                echo "${version}"
+                
                 }
             }
         }
