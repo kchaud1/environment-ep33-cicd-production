@@ -28,6 +28,7 @@ pipeline{
                 echo "Git URL is ${url}"
                 def config = [:]
                 config = pipelineSetup()}
+                echo "${config}"
             }
         }
        
