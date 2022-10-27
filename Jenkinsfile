@@ -27,7 +27,8 @@ pipeline{
                 def url = scm.getUserRemoteConfigs()[0].getUrl()-"https://"
                 echo "Git URL is ${url}"
                 def config = [:]
-                config = pipelineSetup()}
+                config = pipelineSetup()
+            echo "${config}"}
                 //echo "${config}"
             }
         }
