@@ -51,6 +51,7 @@ pipeline{
                 echo "${version}"
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}${path}/${aid}/${version}"
+                    runDockerBuild.build(Map config, List serviceNames=[])
                 
                 }
             }
