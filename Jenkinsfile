@@ -49,7 +49,7 @@ pipeline{
                 echo "${version}"
                     config = pipelineSetup()
                 def deployUrl = config['rtDeploy']
-                    echo "${deployUrl}"
+                    echo "${deployUrl}+${path}+${aid}+${gid}+${version}"
                 
                 }
             }
