@@ -42,7 +42,7 @@ pipeline{
                  
                 def config = [:]
                     config = pipelineSetup()
-                    def service_name = ['karan']
+                    def service_name = []
                 def aid = utilMaven.getArtifactID()
                 def path = utilMaven.getArtifactoryPath()
                 echo "${aid}"
