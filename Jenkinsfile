@@ -53,8 +53,9 @@ pipeline{
                 echo "${version}"
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}${path}/${aid}/${version}"
+                    
                     runDockerBuild.build(config, service_name)
-                    runDockerPush(config, service_name)
+                    ecrPush(config, service_name)
                 
                 }
             }
