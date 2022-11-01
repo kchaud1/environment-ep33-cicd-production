@@ -55,7 +55,7 @@ pipeline{
                     echo "${deployUrl}${path}/${aid}/${version}"
                     
                     runDockerBuild.build(config, service_name)
-                    ecrPush(config, service_name)
+                    runDockerPush(config, service_name)
                 
                 }
             }
