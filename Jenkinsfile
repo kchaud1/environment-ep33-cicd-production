@@ -38,7 +38,7 @@ pipeline{
        
         stage('build and upload'){
             steps{
-               //sh 'mvn clean install'
+                sh "${config['compileArgs']}"
                 script{
                  
                 def config = [:]
