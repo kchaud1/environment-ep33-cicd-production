@@ -38,7 +38,7 @@ pipeline{
        
         stage('build and upload'){
             steps{
-                sh "maven clean install"
+                //sh "maven clean install"
                 script{
                  
                 def config = [:]
@@ -55,8 +55,8 @@ pipeline{
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}${path}/${aid}/${version}"
                     
-                    //runDockerBuild.build(config, service_name)
-                    //runDockerPush(config, service_name)
+                    runDockerBuild.build(config, service_name)
+                    runDockerPush(config, service_name)
                 
                 }
             }
