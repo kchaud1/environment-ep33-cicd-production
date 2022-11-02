@@ -38,7 +38,7 @@ pipeline{
        
         stage('build and upload'){
             steps{
-                //sh "maven clean install"
+                sh "maven clean install"
                 script{
                  
                 def config = [:]
