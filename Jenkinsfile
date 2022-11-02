@@ -26,6 +26,7 @@ pipeline{
             script{
                 def url = scm.getUserRemoteConfigs()[0].getUrl()-"https://"
                 echo "Git URL is ${url}"
+                sh(returnStdout:  true, script: "git tag --sort=-creatordate | head -n 1").trim()
                 def config = [:]
                 config = pipelineSetup()
             echo "${config}"
