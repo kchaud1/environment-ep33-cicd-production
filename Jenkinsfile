@@ -33,6 +33,9 @@ pipeline{
                             def deployUrl = config['rtDeploy']
                     echo "${deployUrl}"}
                 //echo "${config}"
+                def service_name = ['my-service']
+                runDockerBuild.build(config, service_name)
+                    runDockerPush(config, service_name)
             }
         }
        
@@ -55,8 +58,8 @@ pipeline{
                 def deployUrl = config['rtDeploy']
                     echo "${deployUrl}${path}/${aid}/${version}"
                     
-                    runDockerBuild.build(config, service_name)
-                    runDockerPush(config, service_name)
+                    //runDockerBuild.build(config, service_name)
+                    //runDockerPush(config, service_name)
                 
                 }
             }
