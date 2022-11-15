@@ -29,7 +29,7 @@ pipeline{
             echo "${config}"
                             def deployUrl = config['rtDeploy']
                     echo "${deployUrl}"}
-                def argaaa = config['rtDeploy']
+                def deployU = config['rtDeploy']
                 echo "${config}"
                 //sh "${args}"
                 //def service_name = ['my-service']
