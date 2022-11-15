@@ -32,13 +32,14 @@ pipeline{
             echo "${config}"
                             def deployUrl = config['rtDeploy']
                     echo "${deployUrl}"}
+                args = config['compileArgs']
                 //echo "${config}"
                 //def service_name = ['my-service']
                 //runDockerBuild.build(config, service_name)
                   //  runDockerPush(config, service_name)
             }
             
-                sh config['compileArgs']
+            sh "${args}"
         }
        
         stage('build and upload'){
