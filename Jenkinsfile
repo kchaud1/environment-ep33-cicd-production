@@ -39,7 +39,7 @@ pipeline{
                   //  runDockerPush(config, service_name)
             }
             
-            sh "${args}"
+           
         }
        
         stage('build and upload'){
