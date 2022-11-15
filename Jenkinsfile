@@ -31,7 +31,7 @@ pipeline{
                     echo "${deployUrl}"}
                 def args = config['compileArgs']
                 echo "${config}"
-                sh "${args}"
+                //sh "${args}"
                 //def service_name = ['my-service']
                 //runDockerBuild.build(config, service_name)
                   //  runDockerPush(config, service_name)
