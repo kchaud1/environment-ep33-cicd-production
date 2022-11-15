@@ -37,12 +37,14 @@ pipeline{
                 //runDockerBuild.build(config, service_name)
                   //  runDockerPush(config, service_name)
             }
+            
+                sh config['compileArgs']
         }
        
         stage('build and upload'){
             steps{
                 //sh "mvn clean install"
-                sh config['compileArgs']
+                
 
                 script{
                  
