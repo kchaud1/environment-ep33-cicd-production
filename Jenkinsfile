@@ -14,10 +14,7 @@ pipeline{
           
             steps{
                 
-                  script{
-    def browsers = ['chrome', 'firefox']
-    def map = [:]
-    }
+               
                 
                 //checkout([$class: 'GitSCM', branches: [[name: '*/master']], extensions: [], userRemoteConfigs: [[credentialsId: 'github access', url: 'https://github.com/sreenivas449/java-hello-world-with-maven.git']]])
             cleanWs()
@@ -33,13 +30,14 @@ pipeline{
                             def deployUrl = config['rtDeploy']
                     echo "${deployUrl}"}
                 def args = config['compileArgs']
-                //echo "${config}"
+                echo "${config}"
+                sh "${args}"
                 //def service_name = ['my-service']
                 //runDockerBuild.build(config, service_name)
                   //  runDockerPush(config, service_name)
             }
             
-            sh "${args}"
+            
         }
        
         stage('build and upload'){
