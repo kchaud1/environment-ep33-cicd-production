@@ -28,8 +28,8 @@ pipeline{
                 config = pipelineSetup()
             echo "${config}"
                             def deployUrl = config['rtDeploy']
-                    echo "${deployUrl}"}
-                def deployU = config['rtDeploy']
+                            echo "${deployUrl}"}
+                            def deployU = config['rtDeploy']
                 echo "${config}"
                 //sh "${args}"
                 //def service_name = ['my-service']
