@@ -46,6 +46,7 @@ pipeline{
                  
                 def config = [:]
                     config = pipelineSetup()
+                    sh config['compileArgs']
                     def service_name = ['my-service']
                 def aid = utilMaven.getArtifactID()
                 def path = utilMaven.getArtifactoryPath()
